@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :inns, only: [:show]
 
   resource :inn_management, only: [:show] do
-    resources :reservations, only: [:index, :sh]
+    resources :reservations
   end
 
   namespace :inn_dashboard do

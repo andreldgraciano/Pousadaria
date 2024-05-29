@@ -6,6 +6,8 @@ class Inn < ApplicationRecord
   belongs_to :inn_owner
   has_one :address
   has_many :inn_rooms
+  has_many :reservations
+
   accepts_nested_attributes_for :address
   delegate :full_address, to: :address
 
