@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   root "home#index"
   resources :inns, only: [:show]
 
-  resource :inn_management, only: [:show]
+  resource :inn_management, only: [:show] do
+    resources :reservations, only: [:index, :sh]
+  end
 
   namespace :inn_dashboard do
     resource :inns, only: [:edit, :update] do
