@@ -1,0 +1,12 @@
+<h1>Cadastrar Reserva</h1>
+
+<% if @reservation.errors.any? %>
+  <p>Verificar os erros abaixo:</p>
+  <ul>
+    <% @reservation.erros.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render('form') %>

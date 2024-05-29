@@ -1,0 +1,21 @@
+<%= form_with(model: @reservation) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :date_in %>
+    <%= form.date_field :date_in %>
+  </div>
+
+  <div>
+    <%= form.label :date_out %>
+    <%= form.date_field :date_out %>
+  </div>
+
+  <div>
+    <%= form.submit 'Criar Reserva' %>
+  </div>
+
+<% end %>

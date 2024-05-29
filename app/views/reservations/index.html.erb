@@ -1,0 +1,9 @@
+<% if @reservations.any? %>
+  <% @reservations.each do |reservation| %>
+    <div>
+      <%= link_to reservation.name, inn_management_reservation_path(reservation) %>
+    </div>
+  <% end %>
+<% else %>
+  <p>Nenhuma reserva efetuada.</p>
+<% end %>
