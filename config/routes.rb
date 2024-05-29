@@ -10,9 +10,12 @@ Rails.application.routes.draw do
   root "home#index"
   resources :inns, only: [:show]
 
-  resource :inn_management, only: [:show] do
-    resources :reservations
-  end
+  # resource :inn_management, only: [:show] do
+  #   resources :reservations
+  # end
+
+  resource :inn_management, only: [:show]
+  resources :reservations
 
   namespace :inn_dashboard do
     resource :inns, only: [:edit, :update] do
@@ -20,5 +23,11 @@ Rails.application.routes.draw do
     end
 
     resources :inn_rooms, only: [:show, :edit, :update]
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :rooms, only: [:show]
+    end
   end
 end
